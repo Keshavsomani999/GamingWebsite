@@ -1,0 +1,243 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="zxx">
+<head>
+
+		<!-- Basic Page Needs
+		================================================== -->
+		<title>Chills On</title>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="description" content="Games &amp; News webside">
+		<meta name="author" content="sachin">
+		<meta name="keywords" content="Games and news based webside">
+	
+		<!-- Favicons
+		================================================== -->
+		<link rel="shortcut icon" href="{% static 'assets/img/favicons/aa.ico'%}">
+		<link rel="apple-touch-icon" sizes="120x120" href="{% static 'assets/img/favicons/favicon-111.png'%}">
+		<link rel="apple-touch-icon" sizes="152x152" href="{% static 'assets/img/favicons/favicon-111.png'%}">
+	
+		<!-- Mobile Specific Metas
+		================================================== -->
+		<meta name="viewport" content="width=device-width,initial-scale=1.0">
+	
+		<!-- Google Web Fonts
+		================================================== -->
+		<link href="https://fonts.googleapis.com/css?family=Rajdhani:300,400,500,600,700" rel="stylesheet">
+	
+		<!-- CSS
+		================================================== -->
+		<!-- Vendor CSS -->
+		<link href="{% static 'assets/vendor/magnific-popup/css/magnific-popup.css'%}" rel="stylesheet">
+		<link href="{% static 'assets/vendor/slick/css/slick.css'%}" rel="stylesheet">
+		<link href="{% static 'assets/vendor/nanoscroller/css/nanoscroller.css'%}" rel="stylesheet">
+		<link href="{% static 'assets/vendor/fontawesome/css/brands.css'%}" rel="stylesheet">
+	
+		<!-- Template CSS-->
+		<link href="{% static 'assets/css/style.css'%}" rel="stylesheet">
+	
+		<!-- Custom CSS-->
+		<link href="{% static 'assets/css/custom.css'%}" rel="stylesheet">
+	
+</head>
+
+<body class="site-layout--horizontal preloader-is--active">
+
+	<div class="site-wrapper">
+
+		<!-- Header
+		================================================== -->
+		<header id="header" class="site-header site-header--bottom">
+		
+			<!-- Logo - Image Based -->
+			<div class="header-logo header-logo--img">
+				<a href="/"><img src="{% static 'assets/img/logo1.png'%}" srcset="assets/img/logo@2x.png 2x'%}" alt="Necromancers"></a>
+			</div>
+			<!-- Logo - Image Based / End -->
+		
+		
+			<!-- Main Navigation -->
+			<nav class="main-nav">
+				<ul class="main-nav__list">
+					<li class=""><a href="/home">Home</a></li>
+					<li class=""><a href="/store">Store</a>
+					</li>
+					<li class=""><a href="/discover">discover</a>						
+					</li>
+					<li class=""><a href="/tg1">upcomeing</a>						
+					</li>
+					<li><a href="/news">news</a>						
+					</li>
+					
+				</ul>
+			</nav>
+			<!-- Main Navigation / End -->
+		
+			<!-- Header Actions -->
+			<div class="header-actions" style ="margin-right : 60px">
+				<nav class="main-nav" style ="margin-right : -16px">
+					<ul class="main-nav__list">
+						<li class="header-social-toggle d-none d-md-block">
+							<svg role="img" class="df-icon df-icon--logout">
+								<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="72"  >
+									<path d="M11.984,16.985c2.206,0,3.992-0.885,3.992-1.977H7.991C7.991,16.101,9.778,16.985,11.984,16.985z M8.989,9.003H6.988v1.999h2.001V9.003z M11.999,0C5.372,0,0,5.372,0,12c0,6.627,5.372,12,11.999,12C18.627,24,24,18.627,24,12C24,5.372,18.627,0,11.999,0z M11.99,21.992c-5.524,0-10.004-4.474-10.004-9.991S6.466,2.01,11.99,2.01s10.004,4.474,10.004,9.991S17.515,21.992,11.99,21.992z M14.991,11.002h2.001V9.003h-2.001V11.002z"/>			 
+							</svg>
+							<ul class="main-nav__sub">
+								{% if user.is_authenticated %}
+								<li class="menu-item">
+									<a href="account">Hello, {{ user.username }}</a>
+								</li>
+									<li class="menu-item">
+								<a class="menu-item" href="/logout">log out</a>
+									</li>
+								{% else %}
+								<li class=""><a href="/login">Login</a></li>
+								<li class=""><a href="/register">Register</a></li>
+								{% endif %}
+
+							</ul>
+						</li>
+					</ul>
+				</nav>
+						
+				<div class="header-social-toggle d-none d-md-block">
+					<svg role="img" class="df-icon df-icon--thumb-up">
+						<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="72" >
+							<path d="M22,10l0.001,12h-4V10H22 M22.001,8h-4c-1.104,0-2,0.896-2,2v12c0,1.104,0.896,2,2,2h4C23.104,24,24,23.104,24,22V10C24,8.896,23.104,8,22.001,8L22.001,8z"/>
+							<path d="M8.411,2.004c0.009,0,0.018,0,0.025,0c0.799,0.018,0.884,0.9,1.021,1.473c0.139,0.573,0.895,3.56,2.202,5.12c1.309,1.561,2.904,2.245,4.34,2.42v9.329c0,0-1.691,0.07-2.361,0.701c-0.67,0.633-2.074,0.947-3.701,0.947c-1.628,0-3.352,0-3.352,0s-0.043,0.002-0.117,0.002c-0.529,0-2.691-0.08-2.691-1.404c0,0-0.111-0.982,0.606-1.123c0,0-1.436-0.297-1.436-1.963c0,0-0.081-1.018,0.67-1.334c0,0-1.181-0.139-1.181-1.717c0,0,0.016-1.211,0.701-1.544c0,0-1.148-0.14-1.148-1.718S2.756,9.65,3.267,9.615s4.328-0.69,4.328-0.69s-0.434-2.887-0.307-4.5C7.415,2.828,7.636,2.004,8.411,2.004 M8.411,0.004L8.411,0.004c-2.778,0-3.024,3.097-3.116,4.262C5.225,5.153,5.291,6.3,5.383,7.269C4.271,7.453,3.337,7.6,3.116,7.621L3.069,7.623c-1.957,0.119-3.079,1.42-3.079,3.57c0,0.902,0.234,1.622,0.589,2.178c-0.121,0.49-0.139,0.9-0.142,1.059c0,0.904,0.233,1.627,0.588,2.186c-0.069,0.324-0.094,0.652-0.077,0.963c0.015,1.014,0.347,1.842,0.841,2.471c-0.024,0.221-0.028,0.443-0.01,0.662c0.061,1.543,1.313,3.285,4.689,3.285c0.064,0,0.113,0,0.146-0.002h3.322c1.566,0,3.694-0.25,5.008-1.432c0.217-0.102,0.796-0.203,1.138-0.219L18,22.266v-1.92v-9.329V9.246l-1.758-0.214c-0.817-0.1-2.009-0.479-3.05-1.72c-0.777-0.928-1.45-2.899-1.79-4.305l-0.037-0.165C10.868,0.539,9.522,0.028,8.48,0.005l-0.022,0L8.411,0.004L8.411,0.004z"/>
+					</svg>
+					<span class="header-social-toggle__plus">&nbsp;</span>
+					<ul class="social-menu social-menu--header">
+						<li><a href="https://discord.gg/xxxx"><span class="link-subtitle">Discord</span>Necrochat</a></li>
+						<li><a href="https://twitch.com"><span class="link-subtitle">Twitch</span>Necroplay</a></li>
+						<li><a href="https://twitter.com/danfisher_dev"><span class="link-subtitle">Twitter</span>Necrotwt</a></li>
+						<li><a href="https://www.facebook.com/danfisher.dev/"><span class="link-subtitle">Facebook</span>Necrogame</a></li>
+					</ul>
+				</div>
+				
+				<div class="header-search-toggle">
+					<svg role="img" class="df-icon df-icon--search">
+						<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="72" >
+							<path d="M10.02,4.007c-3.314,0-6,2.687-6,6s2.686,6,6,6c3.313,0,6-2.687,6-6S13.333,4.007,10.02,4.007z M10.02,14.007c-2.209,0-4-1.791-4-4s1.791-4,4-4s4,1.791,4,4S12.229,14.007,10.02,14.007z M17.1,2.925C13.191-0.979,6.851-0.975,2.938,2.934c-3.913,3.907-3.917,10.24-0.009,14.144s10.249,3.899,14.162-0.009S21.007,6.828,17.1,2.925z M10.02,18.007c-4.418,0-8-3.582-8-8s3.582-8,8-8s8,3.582,8,8S14.438,18.007,10.02,18.007z"/>
+							<path d="M23.121,18.879l-5.014-5.014c-0.298,0.623-0.66,1.207-1.088,1.74l4.688,4.688C21.962,20.548,22,20.846,22,21c0,0.155-0.038,0.452-0.293,0.707S21.154,22,21,22c-0.155,0-0.452-0.038-0.707-0.293l-4.69-4.689c-0.534,0.426-1.12,0.787-1.744,1.084l5.021,5.02C19.465,23.707,20.232,24,21,24s1.535-0.293,2.121-0.879C24.293,21.95,24.293,20.051,23.121,18.879z"/>
+					</svg>								
+					<svg role="img" class="df-icon df-icon--search-close">
+						<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="72" >
+							<path d="M17.1,2.925C13.191-0.979,6.851-0.975,2.938,2.934c-3.913,3.907-3.917,10.24-0.009,14.144s10.249,3.899,14.162-0.009S21.007,6.828,17.1,2.925z M10.02,18.007c-4.418,0-8-3.582-8-8s3.582-8,8-8s8,3.582,8,8S14.438,18.007,10.02,18.007z"/>
+							<path d="M23.121,18.879l-5.014-5.014c-0.298,0.623-0.66,1.207-1.088,1.74l4.688,4.688C21.962,20.548,22,20.846,22,21c0,0.155-0.038,0.452-0.293,0.707S21.154,22,21,22c-0.155,0-0.452-0.038-0.707-0.293l-4.69-4.689c-0.534,0.426-1.12,0.787-1.744,1.084l5.021,5.02C19.465,23.707,20.232,24,21,24s1.535-0.293,2.121-0.879C24.293,21.95,24.293,20.051,23.121,18.879z"/>
+							<path d="M14,12.667L12.666,14L10,11.333L7.333,14L6,12.667L8.666,10L6,7.333L7.333,6L10,8.667L12.666,6L14,7.333L11.333,10L14,12.667z"/>
+					</svg>
+				</div>
+				
+				
+
+				
+			</div>
+			<!-- Header Actions / End -->
+		</header>
+		<!-- Header / End -->
+
+		<!-- Content
+		================================================== -->
+		<main class="site-content" id="wrapper">
+			
+			<div class="page-heading page-heading--loop page-heading--partners bg-image bg--ph-02">
+				
+				<h1 class="h1 post__cats-item text-danger"> free & top </br>games</h1>
+			</div>
+			<div class="content staff-layout">
+				{% for games in games %}
+				{% if games.top or games.free %}
+				<article class="staff-member has-post-thumbnail">
+					<div class="staff-member__thumbnail">
+						<a href="/gameproduct/{{ games.id }}"><img src="{{games.imageB.url}}" alt=""></a>
+					</div>
+					<div class="staff-member__body">
+						
+						{% if games.top %}
+						<h2 class="h5 post__cats-item text-danger">top games</h2>
+						{% elif games.free %}
+						<h2 class="h5 post__cats-item text-danger">free games</h2>
+						{% endif %}
+						<div class="staff-member__title h3">{{games.name}}</div>
+						
+						<div class="staff-member__excerpt">only-{{games.price}}</div>
+						
+					</div>
+				</article>
+				{% endif %}
+				{% endfor %}
+				
+				
+			
+			</div>
+		</main>
+
+		
+		
+		
+		<!-- Search Panel -->
+		<div class="search-panel">
+			<div class="search-panel__content">
+				<form action="{% url 'search' %}" id="header-search-form" class="search-form search-form--header" method="POST" > {% csrf_token %}
+					<input type="text" name = "search" class="form-control" value="" placeholder="What are you looking for...?">
+					
+				</form>
+				<span>Write what you are looking for, choose the filters and press enter to begin your search!</span>
+			</div>
+		</div>
+		<!-- Search Panel / End -->
+
+	</div>
+
+	<div class="preloader-overlay">
+		<div id="js-preloader" class="preloader">
+			<div class="preloader-inner fadeInUp">
+				<div class="pong-loader"></div>
+				<svg role="img" class="df-icon df-icon--preloader-arcade">
+					<use xlink:href="assets/img/necromancers.svg#preloader-arcade"/>
+				</svg>
+			</div>
+		</div>
+	</div>
+
+	<!-- The cursor elements -->
+	<div class="df-custom-cursor-wrap">
+		<div id="df-custom-cursor"></div>
+	</div>
+
+	<!-- Javascript Files
+	================================================== -->
+	<!-- Core JS -->
+	<script src="{% static 'assets/vendor/jquery/jquery.min.js'%}"></script>
+	<script src="{% static 'assets/vendor/jquery/jquery-migrate.min.js'%}"></script>
+	<script src="{% static 'assets/vendor/bootstrap/js/bootstrap.bundle.min.js'%}"></script>
+	<script src="{% static 'assets/js/core.js'%}"></script>
+	
+	<!-- Vendor JS -->
+	
+	<!-- Template JS -->
+	<script src="{% static 'assets/js/init.js'%}"></script>
+	<script src="{% static 'assets/js/custom.js'%}"></script>
+	
+	<!-- Duotone SVG color filter -->
+	<svg xmlns="http://www.w3.org/2000/svg" class="svg-filters">
+		<filter id="duotone_base">
+			<feColorMatrix type="matrix" result="grayscale"
+				values="1 0 0 0 0
+								1 0 0 0 0
+								1 0 0 0 0
+								0 0 0 1 0" />
+			<feComponentTransfer color-interpolation-filters="sRGB" result="duotone_base_filter">
+				<feFuncR type="table" tableValues="0.082352941176471 0.419607843137255"></feFuncR>
+				<feFuncG type="table" tableValues="0.090196078431373 0.443137254901961"></feFuncG>
+				<feFuncB type="table" tableValues="0.125490196078431 0.6"></feFuncB>
+				<feFuncA type="table" tableValues="0 1"></feFuncA>
+			</feComponentTransfer>
+		</filter>
+	</svg>
+
+</body>
+
+</html>
