@@ -1,1 +1,1 @@
-web: gunicorn razegames.wsgi
+web: gunicorn razegames.wsgi --log-file -
