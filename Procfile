@@ -1,1 +1,1 @@
-web: gunicorn CCMS.wsgi --log-file -
+web: gunicorn razegames.wsgi --log file
